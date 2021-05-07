@@ -2,13 +2,13 @@
 using namespace std;
 const int Mx = 111;
 
-vector <int> g[Mx];
-bool vis[Mx];
-int dis[Mx];
+vector <int> g[Mx]; /// adj[i] is a vector, which stores
+bool vis[Mx]; /// To check if i'th node is visited or not.
+int dis[Mx]; /// To store the distance from starting Node
 
 void bfs(int source) {
    queue <int> Q;
-   vis[source] = 1;
+   vis[source] = true;
    dis[source] = 0;
    Q.push(source);
    while(!Q.empty()) {
@@ -16,14 +16,15 @@ void bfs(int source) {
       Q.pop();
       for(int i = 0; i < g[node].size(); i++) {
          int next = g[node][i];
-         if(vis[next] == 0) {
-            vis[next] = 1; // Visit
-            dis[next] = dis[next] + 1; // Update
+         if(vis[next] == false) {
+            vis[next] = true; // Visit
+            dis[next] = dis[node] + 1; // Update
             Q.push(next);//push Queue for Delete
          }
       }
    }
 }
+
 
 int main() {
    ios_base::sync_with_stdio(false);
