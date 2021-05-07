@@ -6,14 +6,19 @@ vector <int> v , t;
 
 void dfs(int x) {
     int cnt = 0;
+    cout <<"Array"<<" "<< x <<"\n";
     for(int i = 0; i < a[x].size(); i++) {
         int xt = a[x][i];
+        cout << xt <<" ";
+        cout <<"first\n";
         dfs(xt);
+        cout <<"2nd\n";
         cnt += v[xt];
     }
-    if(cnt == a[x].size() && v[x] == 1) {
+   /* if(cnt == a[x].size() && v[x] == 1) {
         t.push_back(x);
     }
+    */
 }
 
 int main() {
@@ -35,6 +40,7 @@ int main() {
         }
     }
     dfs(root);
+    exit(0);
     sort(t.begin() , t.end());
     if(t.size() == 0) {
         cout <<"-1\n";
