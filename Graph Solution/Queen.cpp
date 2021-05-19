@@ -3,13 +3,17 @@ using namespace std;
 
 vector <vector <int >> a;
 vector <int> v , t;
+bool vis[100];
 
 void dfs(int x) {
     int cnt = 0;
+    vis[x] = true;
     for(int i = 0; i < a[x].size(); i++) {
         int xt = a[x][i];
-        dfs(xt);
-        cnt += v[xt];
+        if(vis[xt] == false) {
+           dfs(xt);
+           cnt += v[xt];
+        }
     }
 }
 
