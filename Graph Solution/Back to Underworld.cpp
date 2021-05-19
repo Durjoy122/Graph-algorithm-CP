@@ -19,7 +19,6 @@ void bfs(int vt) {
         for(int i = 0; i < x[node].size(); i++) {
             int nxt = x[node][i];
             if(a[nxt] == 0) {
-                cout << nxt <<"\n";
                 if(a[node] == 1) {
                     a[nxt] = 2;
                     lyk++;
