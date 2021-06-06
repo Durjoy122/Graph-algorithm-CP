@@ -58,7 +58,6 @@ int main() {
            c[u].push_back(x);
        }
        int tto = bfs(0);
-       cout << tto <<"\n";
        for(int i = 0; i <= n; i++) {
            vis[i] = 0;
            dis[i] = 0;
