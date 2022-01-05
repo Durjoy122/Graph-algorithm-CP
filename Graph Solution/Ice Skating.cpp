@@ -24,11 +24,9 @@ void solve() {
         cin >> x >> y;
         v.push_back(make_pair(x , y));
     }
-    int lmb = 0;
     for(int i = 0; i < n; i++) {
         for(int j = i + 1; j < n; j++) {
             if(v[i].first == v[j].first || v[i].second == v[j].second) {
-                lmb++;
                 g[i].push_back(j);
                 g[j].push_back(i);
             }
@@ -37,8 +35,6 @@ void solve() {
             }
         }
     }
-    cout << lmb;
-    exit(0);
     int cnt = 0;
     for(int i = 0; i < n; i++) {
         if(!used[i]) {
